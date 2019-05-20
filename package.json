@@ -1,0 +1,11 @@
+{
+  "name": "nativescript-redux-persist",
+  "version": "1.0.0",
+  "description": "redux persist reducer for nativescript using couchdb",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "one-more",
+  "license": "ISC"
+}
