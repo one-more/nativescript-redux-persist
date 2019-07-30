@@ -1,7 +1,7 @@
-import {Couchbase} from "nativescript-couchbase-plugin";
-import * as applicationSettings from "tns-core-modules/application-settings";
+import { Couchbase } from 'nativescript-couchbase-plugin';
+import * as applicationSettings from 'tns-core-modules/application-settings';
 
-const mainDB = "Main";
+const mainDB = 'Main';
 
 export const database = new Couchbase(mainDB);
 
@@ -17,25 +17,20 @@ export function readFromDocument(name: string) {
     const documentId = getPersistDocumentId(name);
 
     if (documentId) {
-        return database.getDocument(documentId)
+        return database.getDocument(documentId);
     }
-    return undefined
+    return undefined;
 }
 
 export function writeToDocument(name: string, data: any) {
     const documentId = getPersistDocumentId(name);
 
     if (documentId) {
-        database.updateDocument(
-            documentId,
-            data,
-        )
+        database.updateDocument(documentId, data);
     } else {
         setPersistDocumentId(
             name,
-            database.createDocument(
-                data,
-            )
-        )
+            database.createDocument(data),
+        );
     }
 }
